@@ -1,4 +1,7 @@
 <p align="center">
+  <img src="./profile-card.svg" alt="Shoham Chakraborty — terminal profile card" width="100%" />
+</p>
+<p align="center">
   <a href="https://shohamchakraborty.github.io/mausam/">
     <img src="weather-card.svg" alt="Live Kolkata weather card" width="600"/>
   </a>
