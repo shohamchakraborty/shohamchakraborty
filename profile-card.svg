@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="550" viewBox="0 0 960 550" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace">
+  <defs>
+    <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#58e6ff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#58e6ff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#58e6ff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="leftClip"><rect x="30" y="62" width="280" height="420" rx="8"/></clipPath>
+  </defs>
+  <style>
+    .fade { animation: fade .5s ease-out both; }
+    @keyframes fade { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
+    .scanline { animation: sweep 3.6s linear infinite; }
+    @keyframes sweep { from { transform: translateY(-40px); } to { transform: translateY(440px); } }
+    .cursor { animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .bar { animation: rise 6s ease-out infinite; transform-box: fill-box; transform-origin: bottom; }
+    @keyframes rise { 0% { transform: scaleY(0); } 15%,85% { transform: scaleY(1); } 100% { transform: scaleY(1); } }
+    .trend { stroke-dasharray: 220; animation: draw 6s ease-in-out infinite; }
+    @keyframes draw { 0%,18% { stroke-dashoffset: 220; opacity: 1; } 45%,90% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+    .dot { animation: pop 6s ease-out infinite; }
+    @keyframes pop { 0%,44% { opacity: 0; } 50%,90% { opacity: 1; } 100% { opacity: 0; } }
+    .float { animation: float 3s ease-in-out infinite alternate; }
+    @keyframes float { from { transform: translateY(-6px); } to { transform: translateY(6px); } }
+    .wobble { animation: wobble 4s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
+    @keyframes wobble { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
+    .shine { animation: pulse .9s steps(2) infinite alternate; }
+    .spark { animation: twinkle 2.1s steps(1) infinite; }
+    @keyframes twinkle { 0%,60% { opacity: 0; } 61%,100% { opacity: 1; } }
+    .bit { animation: up 6s linear infinite; opacity: 0; }
+    @keyframes up { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translateY(-400px); opacity: 0; } }
+    .d1,.d2,.d3 { animation: blink 1.5s steps(1) infinite; }
+    .d2 { animation-delay: .25s; } .d3 { animation-delay: .5s; }
+    .node { animation: pulse 2s ease-in-out infinite alternate; }
+    @keyframes pulse { from { opacity: .45; } to { opacity: 1; } }
+    .k { font-size: 13px; font-weight: 700; }
+    .v { font-size: 13px; fill: #e6edf3; }
+    .div { font-size: 12px; fill: #3d4a5c; }
+  </style>
+
+  <!-- background + window -->
+  <rect width="960" height="550" fill="#05080d"/>
+  <rect x="10" y="10" width="940" height="530" rx="12" fill="none" stroke="#2ee6ff" stroke-width="3" opacity=".55" filter="url(#glow)"/>
+  <rect x="10" y="10" width="940" height="530" rx="12" fill="#0b1018" stroke="#2f81f7" stroke-opacity=".7" stroke-width="1.5"/>
+  <rect x="10" y="10" width="940" height="36" rx="12" fill="#121a26"/>
+  <rect x="10" y="30" width="940" height="16" fill="#121a26"/>
+  <circle cx="34" cy="28" r="6" fill="#ff5f56"/>
+  <circle cx="56" cy="28" r="6" fill="#ffbd2e"/>
+  <circle cx="78" cy="28" r="6" fill="#27c93f"/>
+  <text x="480" y="33" text-anchor="middle" font-size="12" fill="#7d8590">shoham@kolkata: ~  —  neofetch --profile</text>
+
+  <!-- LEFT: portrait placeholder -->
+  <rect x="30" y="62" width="280" height="420" rx="8" fill="#070b11" stroke="#1f6feb" stroke-opacity=".6"/>
+  <g clip-path="url(#leftClip)">
+    <!-- faint grid -->
+    <g stroke="#13202f" stroke-width="1">
+      <path d="M30 110H310M30 158H310M30 206H310M30 254H310M30 302H310M30 350H310M30 398H310M30 446H310"/>
+      <path d="M78 62V482M126 62V482M174 62V482M222 62V482M270 62V482"/>
+    </g>
+    <!-- floating binary particles -->
+    <g font-size="10" fill="#1f6feb" opacity=".55">
+      <text class="bit" x="48" y="470">1</text>
+      <text class="bit" x="290" y="470" style="animation-delay:1.1s">0</text>
+      <text class="bit" x="62" y="470" style="animation-delay:2.3s">0</text>
+      <text class="bit" x="276" y="470" style="animation-delay:3.2s">1</text>
+      <text class="bit" x="296" y="470" style="animation-delay:4.4s">1</text>
+      <text class="bit" x="44" y="470" style="animation-delay:5.1s">0</text>
+    </g>
+    <!-- neural net: edges + travelling signals -->
+    <g stroke="#1f6feb" stroke-opacity=".45" stroke-width="1.5" fill="none">
+      <path id="e1" d="M90 100L170 120"/><path id="e2" d="M90 140L170 150"/>
+      <path id="e3" d="M90 100L170 150"/><path id="e4" d="M90 140L170 120"/>
+      <path id="e5" d="M170 120L250 108"/><path id="e6" d="M170 150L250 142"/>
+      <path id="e7" d="M170 120L250 142"/><path id="e8" d="M170 150L250 108"/>
+    </g>
+    <g fill="#ffffff">
+      <rect width="4" height="4" x="-2" y="-2"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0s"><mpath href="#e1"/></animateMotion></rect>
+      <rect width="4" height="4" x="-2" y="-2"><animateMotion dur="1.6s" repeatCount="indefinite" begin=".5s"><mpath href="#e2"/></animateMotion></rect>
+      <rect width="4" height="4" x="-2" y="-2"><animateMotion dur="1.6s" repeatCount="indefinite" begin="1s"><mpath href="#e3"/></animateMotion></rect>
+      <rect width="4" height="4" x="-2" y="-2"><animateMotion dur="1.6s" repeatCount="indefinite" begin=".3s"><mpath href="#e4"/></animateMotion></rect>
+      <rect width="4" height="4" x="-2" y="-2"><animateMotion dur="1.6s" repeatCount="indefinite" begin=".8s"><mpath href="#e5"/></animateMotion></rect>
+      <rect width="4" height="4" x="-2" y="-2"><animateMotion dur="1.6s" repeatCount="indefinite" begin="1.3s"><mpath href="#e6"/></animateMotion></rect>
+      <rect width="4" height="4" x="-2" y="-2"><animateMotion dur="1.6s" repeatCount="indefinite" begin=".6s"><mpath href="#e7"/></animateMotion></rect>
+      <rect width="4" height="4" x="-2" y="-2"><animateMotion dur="1.6s" repeatCount="indefinite" begin="1.1s"><mpath href="#e8"/></animateMotion></rect>
+    </g>
+    <g fill="#58e6ff">
+      <rect class="node" x="84" y="94" width="12" height="12"/>
+      <rect class="node" x="84" y="134" width="12" height="12" style="animation-delay:.4s"/>
+      <rect class="node" x="164" y="114" width="12" height="12" style="animation-delay:.8s"/>
+      <rect class="node" x="164" y="144" width="12" height="12" style="animation-delay:1.2s"/>
+      <rect class="node" x="244" y="102" width="12" height="12" style="animation-delay:1.6s"/>
+      <rect class="node" x="244" y="136" width="12" height="12" style="animation-delay:.2s"/>
+    </g>
+    <!-- pixel capsule: floats + wobbles -->
+    <g class="float">
+      <g transform="translate(108 205) rotate(-25 72 36)">
+        <g class="wobble">
+          <g fill="#ff6b6b">
+            <rect x="24" y="0" width="48" height="12"/><rect x="12" y="12" width="60" height="12"/>
+            <rect x="0" y="24" width="72" height="24"/><rect x="12" y="48" width="60" height="12"/>
+            <rect x="24" y="60" width="48" height="12"/>
+          </g>
+          <g fill="#e6edf3">
+            <rect x="72" y="0" width="48" height="12"/><rect x="72" y="12" width="60" height="12"/>
+            <rect x="72" y="24" width="72" height="24"/><rect x="72" y="48" width="60" height="12"/>
+            <rect x="72" y="60" width="48" height="12"/>
+          </g>
+          <rect x="12" y="12" width="12" height="12" fill="#ffa8a8"/>
+          <rect class="shine" x="84" y="12" width="12" height="12" fill="#ffffff"/>
+        </g>
+      </g>
+      <!-- sparkles -->
+      <g fill="#ffd866">
+        <path class="spark" d="M96 200h4v4h-4zM92 204h4v4h-4zM100 204h4v4h-4zM96 208h4v4h-4z"/>
+        <path class="spark" style="animation-delay:.7s" d="M262 232h4v4h-4zM258 236h4v4h-4zM266 236h4v4h-4zM262 240h4v4h-4z"/>
+        <path class="spark" style="animation-delay:1.4s" d="M70 280h4v4h-4zM66 284h4v4h-4zM74 284h4v4h-4zM70 288h4v4h-4z"/>
+      </g>
+    </g>
+    <!-- bar chart: bars rise in sequence, forecast line draws over them -->
+    <g fill="#39d353">
+      <rect class="bar" x="70" y="392" width="22" height="30" style="animation-delay:0s"/>
+      <rect class="bar" x="102" y="380" width="22" height="42" style="animation-delay:.15s"/>
+      <rect class="bar" x="134" y="386" width="22" height="36" style="animation-delay:.3s"/>
+      <rect class="bar" x="166" y="364" width="22" height="58" style="animation-delay:.45s"/>
+      <rect class="bar" x="198" y="350" width="22" height="72" style="animation-delay:.6s"/>
+    </g>
+    <rect class="bar ghost" x="230" y="336" width="22" height="86" fill="none" stroke="#39d353" stroke-dasharray="4 3" style="animation-delay:.75s"/>
+    <path class="trend" d="M81 384L113 372L145 378L177 356L209 342L241 326" fill="none" stroke="#ffd866" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect class="dot" x="236" y="321" width="10" height="10" fill="#ffd866"/>
+    <path d="M60 424H270" stroke="#39d353" stroke-opacity=".6" stroke-width="2"/>
+    <text x="246" y="316" text-anchor="middle" font-size="9" fill="#ffd866" class="dot">forecast</text>
+    <text x="170" y="452" text-anchor="middle" font-size="11" fill="#7d8590">// loading portrait<tspan class="d1">.</tspan><tspan class="d2">.</tspan><tspan class="d3">.</tspan></text>
+    <!-- scanline -->
+    <g class="scanline">
+      <rect x="30" y="62" width="280" height="40" fill="url(#scan)"/>
+    </g>
+  </g>
+
+  <!-- RIGHT: info panel -->
+  <rect x="330" y="62" width="600" height="420" rx="8" fill="#070b11" stroke="#1f6feb" stroke-opacity=".6"/>
+  <text x="350" y="92" font-size="15" font-weight="700" fill="#58e6ff">shoham<tspan fill="#7d8590">@</tspan>chakraborty</text>
+  <text x="350" y="108" class="div">────────────────────────────────────────────────────────────</text>
+
+  <g>
+    <text class="fade" style="animation-delay:.1s" x="350" y="134"><tspan class="k" fill="#58e6ff">Subject</tspan><tspan class="v" x="470">Shoham Chakraborty</tspan></text>
+    <text class="fade" style="animation-delay:.2s" x="350" y="156"><tspan class="k" fill="#58e6ff">Role</tspan><tspan class="v" x="470">AI/ML Undergrad · Data Analytics · Inventory Intelligence</tspan></text>
+    <text class="fade" style="animation-delay:.3s" x="350" y="178"><tspan class="k" fill="#58e6ff">Origin</tspan><tspan class="v" x="470">Kolkata, West Bengal, India</tspan></text>
+    <text class="fade" style="animation-delay:.4s" x="350" y="200"><tspan class="k" fill="#58e6ff">Education</tspan><tspan class="v" x="470">B.Tech CSE (AI/ML) · KIIT University · CGPA 8.88</tspan></text>
+    <text class="fade" style="animation-delay:.5s" x="350" y="222"><tspan class="k" fill="#58e6ff">Status</tspan><tspan class="v" x="470">Building · Learning · Shipping</tspan></text>
+
+    <text class="fade div" style="animation-delay:.6s" x="350" y="248">── toolchain ──────────────────────────────────────────────────</text>
+
+    <text class="fade" style="animation-delay:.7s" x="350" y="272"><tspan class="k" fill="#d2a8ff">Core Lang</tspan><tspan class="v" x="470">Python, Java, C, SQL</tspan></text>
+    <text class="fade" style="animation-delay:.8s" x="350" y="294"><tspan class="k" fill="#d2a8ff">AI / ML</tspan><tspan class="v" x="470">scikit-learn, Deep Learning, GANs, Gemini API</tspan></text>
+    <text class="fade" style="animation-delay:.9s" x="350" y="316"><tspan class="k" fill="#d2a8ff">Data / BI</tspan><tspan class="v" x="470">Pandas, Plotly, Power BI, Excel, Streamlit</tspan></text>
+    <text class="fade" style="animation-delay:1s" x="350" y="338"><tspan class="k" fill="#d2a8ff">Core Infra</tspan><tspan class="v" x="470">Git, MySQL, Java Swing</tspan></text>
+
+    <text class="fade div" style="animation-delay:1.1s" x="350" y="364">── record ─────────────────────────────────────────────────────</text>
+
+    <text class="fade" style="animation-delay:1.2s" x="350" y="388"><tspan class="k" fill="#39d353">Experience</tspan><tspan class="v" x="470">Data Analytics &amp; Inventory Intern · Soham Distributors</tspan></text>
+    <text class="fade" style="animation-delay:1.3s" x="350" y="410"><tspan class="k" fill="#39d353">Publication</tspan><tspan class="v" x="470">IEEE Xplore · GAN + EfficientNet-B3 oral cancer paper</tspan></text>
+    <text class="fade" style="animation-delay:1.4s" x="350" y="432"><tspan class="k" fill="#39d353">Award</tspan><tspan class="v" x="470">Bronze · INDCON Industrial Innovation Challenge 2026</tspan></text>
+    <text class="fade" style="animation-delay:1.5s" x="350" y="454"><tspan class="k" fill="#39d353">Links</tspan><tspan class="v" x="470">github.com/shohamchakraborty · in/showchak</tspan></text>
+  </g>
+
+  <!-- prompt -->
+  <text x="34" y="516" font-size="13"><tspan fill="#39d353">shoham@kolkata</tspan><tspan fill="#7d8590">:</tspan><tspan fill="#58e6ff">~</tspan><tspan fill="#7d8590">$ </tspan><tspan fill="#e6edf3">whoami --build</tspan></text>
+  <rect class="cursor" x="288" y="504" width="8" height="15" fill="#58e6ff"/>
+</svg>
