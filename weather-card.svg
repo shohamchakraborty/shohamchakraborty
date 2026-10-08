@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="150" viewBox="0 0 400 150">
-  <rect x="0" y="0" width="400" height="150" fill="#7EC8E3"/>
+  <rect x="0" y="0" width="400" height="150" fill="#8FA3B8"/>
 
   <rect x="0"   y="128" width="216" height="22" fill="#8D8574"/>
   <rect x="216" y="128" width="184" height="22" fill="#3A6EA5"/>
@@ -50,13 +50,28 @@
   </g>
 
 
-  <g fill="#FFD93D">
-    <rect x="32" y="24" width="24" height="8"/>
-    <rect x="24" y="32" width="40" height="24"/>
-    <rect x="32" y="56" width="24" height="8"/>
+  <g fill="#D7DEE6">
+    <rect x="40" y="40" width="24" height="8"/>
+    <rect x="32" y="48" width="48" height="8"/>
+    <rect x="24" y="56" width="56" height="12"/>
   </g>
-
-  <text x="88" y="56"  font-family="monospace" font-size="28" fill="#1B2A41">26.7°C</text>
+  <g fill="#DCEBF7" opacity="0.8">
+    <rect x="16" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="0s" repeatCount="indefinite"/></rect>
+    <rect x="44" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="-0.6s" repeatCount="indefinite"/></rect>
+    <rect x="76" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="-0.3s" repeatCount="indefinite"/></rect>
+    <rect x="104" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="-0.9s" repeatCount="indefinite"/></rect>
+    <rect x="136" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="-0.15s" repeatCount="indefinite"/></rect>
+    <rect x="164" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="-0.75s" repeatCount="indefinite"/></rect>
+    <rect x="196" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="-0.45s" repeatCount="indefinite"/></rect>
+    <rect x="228" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="-1.05s" repeatCount="indefinite"/></rect>
+    <rect x="256" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="-0.2s" repeatCount="indefinite"/></rect>
+    <rect x="284" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="-0.8s" repeatCount="indefinite"/></rect>
+    <rect x="312" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="-0.5s" repeatCount="indefinite"/></rect>
+    <rect x="340" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="-1.0s" repeatCount="indefinite"/></rect>
+    <rect x="368" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="-0.35s" repeatCount="indefinite"/></rect>
+    <rect x="392" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="-0.65s" repeatCount="indefinite"/></rect>
+  </g>
+  <text x="88" y="56"  font-family="monospace" font-size="28" fill="#1B2A41">25.7°C</text>
   <text x="88" y="80"  font-family="monospace" font-size="16" fill="#1B2A41">Kolkata</text>
-  <text x="88" y="100" font-family="monospace" font-size="16" fill="#1B2A41">Clear</text>
+  <text x="88" y="100" font-family="monospace" font-size="16" fill="#1B2A41">Rainy</text>
 </svg>
