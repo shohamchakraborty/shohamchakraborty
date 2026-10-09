@@ -56,7 +56,7 @@
     <rect x="32" y="56" width="24" height="8"/>
   </g>
 
-  <text x="88" y="56"  font-family="monospace" font-size="28" fill="#1B2A41">24.3°C</text>
+  <text x="88" y="56"  font-family="monospace" font-size="28" fill="#1B2A41">29.7°C</text>
   <text x="88" y="80"  font-family="monospace" font-size="16" fill="#1B2A41">Kolkata</text>
   <text x="88" y="100" font-family="monospace" font-size="16" fill="#1B2A41">Clear</text>
 </svg>
