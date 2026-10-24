@@ -62,7 +62,7 @@
     <rect x="24" y="56" width="56" height="12"/>
   </g>
 
-  <text x="88" y="56"  font-family="monospace" font-size="28" fill="#1B2A41">28.7°C</text>
+  <text x="88" y="56"  font-family="monospace" font-size="28" fill="#1B2A41">29.3°C</text>
   <text x="88" y="80"  font-family="monospace" font-size="16" fill="#1B2A41">Kolkata</text>
   <text x="88" y="100" font-family="monospace" font-size="16" fill="#1B2A41">Cloudy</text>
 </svg>
