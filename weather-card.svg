@@ -71,7 +71,7 @@
     <rect x="368" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="-0.35s" repeatCount="indefinite"/></rect>
     <rect x="392" y="-6" width="2" height="6"><animate attributeName="y" from="-6" to="122" dur="1.2s" begin="-0.65s" repeatCount="indefinite"/></rect>
   </g>
-  <text x="88" y="56"  font-family="monospace" font-size="28" fill="#1B2A41">22.3°C</text>
+  <text x="88" y="56"  font-family="monospace" font-size="28" fill="#1B2A41">22.7°C</text>
   <text x="88" y="80"  font-family="monospace" font-size="16" fill="#1B2A41">Kolkata</text>
   <text x="88" y="100" font-family="monospace" font-size="16" fill="#1B2A41">Rainy</text>
 </svg>
